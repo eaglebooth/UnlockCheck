@@ -2,7 +2,11 @@ import { createClient } from "genlayer-js";
 import { studionet } from "genlayer-js/chains";
 
 export const explorer = "https://explorer-studio.genlayer.com";
-export const contractAddress = import.meta.env.VITE_UNLOCKCHECK_ADDRESS || "";
+// A public, verified Studionet address keeps hosted builds usable even when
+// the deployment platform has no per-environment VITE_* configuration.
+export const contractAddress =
+  import.meta.env.VITE_UNLOCKCHECK_ADDRESS ||
+  "0xf95DB72FACA2B08732B391977dd2f13FaA58Ca8d";
 export const chain = { ...studionet, blockExplorers: { default: { name: "GenLayer Studio Explorer", url: explorer } } };
 const chainIdHex = `0x${chain.id.toString(16)}`;
 
