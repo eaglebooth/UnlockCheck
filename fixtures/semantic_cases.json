@@ -1,0 +1,11 @@
+{
+  "classification": "SYNTHETIC_UNIT_CASES_NOT_LIVE_CHAIN_EVIDENCE",
+  "scope": "The contract reports only equality between a source-resolved effective start epoch and one finalized start() getter.",
+  "cases": [
+    {"id": "synthetic-equal", "effective_start": 1681754400, "onchain_start": 1681754400, "expected": "MATCH"},
+    {"id": "synthetic-superseded-old-value", "effective_start": 1681754400, "onchain_start": 1679590871, "expected": "MISMATCH"},
+    {"id": "synthetic-wrong-onchain-value", "effective_start": 1681754400, "onchain_start": 1681754401, "expected": "MISMATCH"},
+    {"id": "synthetic-source-ambiguous", "source_confirmed": false, "expected": "AMBIGUOUS"}
+  ],
+  "limitations": "These examples exercise classification expectations only. They do not assert that a live RPC, official source fetch, deployed contract, or GenLayer consensus transaction has been observed."
+}
